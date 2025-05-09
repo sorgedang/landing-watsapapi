@@ -9,32 +9,36 @@
   <style>
     body {
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(135deg, #e0f7fa, #ffffff);
-      color: #333;
+      background: #000;
+      color: #00ff90;
       margin: 0;
       padding: 0;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       min-height: 100vh;
-    }
-    .card {
-      background: white;
-      padding: 2rem;
-      border-radius: 1rem;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
       text-align: center;
-      max-width: 400px;
     }
-    h1 {
-      margin-bottom: 1rem;
-      font-size: 1.8rem;
-      color: #00796b;
+
+    .typing {
+      font-size: 1.5rem;
+      white-space: nowrap;
+      border-right: 2px solid;
+      overflow: hidden;
+      width: 0;
+      animation: typing 4s steps(40, end) forwards, blink 0.7s step-end infinite;
     }
-    p {
-      margin-bottom: 2rem;
-      font-size: 1rem;
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
     }
+
+    @keyframes blink {
+      50% { border-color: transparent }
+    }
+
     .whatsapp-btn {
       display: inline-flex;
       align-items: center;
@@ -45,26 +49,65 @@
       border-radius: 0.5rem;
       text-decoration: none;
       font-weight: 600;
+      margin: 2rem 0;
       transition: background 0.3s;
     }
+
     .whatsapp-btn:hover {
       background-color: #1ebc5a;
     }
+
     .whatsapp-btn img {
       width: 20px;
       height: 20px;
     }
+
+    .cards {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 800px;
+      padding: 0 1rem;
+    }
+
+    .card {
+      background-color: #111;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 8px 16px rgba(0, 255, 144, 0.1);
+      color: #00ff90;
+      flex: 1 1 300px;
+    }
+
+    .card h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+    }
   </style>
 </head>
 <body>
-  <div class="card">
-    <h1>Portal API WhatsApp</h1>
-    <p>Selamat datang! Ini adalah portal layanan API WhatsApp.</p>
-    <p>Hubungi kami untuk integrasi atau bantuan teknis.</p>
-    <a href="https://wa.me/6281952859953" class="whatsapp-btn" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp Icon">
-      Hubungi via WhatsApp
-    </a>
+
+  <div class="typing">Selamat datang, di web site penyedia WA API Gateway.</div>
+
+  <a href="https://wa.me/6281952859953" class="whatsapp-btn" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp Icon">
+    Hubungi via WhatsApp
+  </a>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Daftar Akun</h3>
+      <p>Anda dapat mendaftarkan akun WhatsApp Anda untuk koneksi API secara mandiri.</p>
+    </div>
+    <div class="card">
+      <h3>Status Perangkat</h3>
+      <p>Lihat status koneksi perangkat dan mulai kirim/terima pesan dari sistem Anda.</p>
+    </div>
   </div>
+
 </body>
 </html>
